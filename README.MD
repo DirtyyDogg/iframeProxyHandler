@@ -1,3 +1,7 @@
+## Making some modifications to this library to handle drect proxying for a specific URL 
+
+For reference, the exact line which is fetching the file to proxy is at 106 in lib/node-iframe-replacement.js
+
 # node-iframe-replacement
 [![Shippable branch](https://img.shields.io/shippable/5869721607d5371300747182/master.svg)](https://app.shippable.com/projects/5869721607d5371300747182) [![npm](https://img.shields.io/npm/dt/node-iframe-replacement.svg)](https://www.npmjs.com/package/node-iframe-replacement) [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/MrJohnDoherty.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/MrJohnDoherty)
 
