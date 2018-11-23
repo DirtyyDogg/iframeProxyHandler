@@ -18,15 +18,53 @@ function Server() {
     app.set('views', path.resolve(__dirname, 'views'));
     app.set('view engine', 'hbs');
 
-    // create simple route to test our fake news
-    app.get('/', function(req, res) {
+    // // create simple route to test our fake news
+    // app.get('/:id', function(req, res) {
 
+    //     var urls = [
+    //         "https://www.xkcd.com/1",
+    //         "https://www.twitter.com/realDonaldTrump/status/528286220418564096?lang=en",
+    //         "https://www.reddit.com/r/popular/",
+    //         "https://www.snopes.com/fact-check/brenda-lee-removed-air-force-one/",
+    //         "https://www.downloadbreadcrumbs.com/#/tutorial1",
+    //         "https://www.tomsguide.com/us/amazon-data-breach,news-28610.html",
+    //         "https://www.twitter.com/PrisonPlanet/status/1060344443616800768"
+
+    //     ]
+
+    //     var id = req.params.id
+    //     // respond to this request with our fake-new content embedded within the BBC News home page
+    //     console.log('triggered for id', id, 'new url')
+    //     res.merge('fake-news', {
+    //         sourceUrl: urls[id],                             // external url to fetch
+    //         sourcePlaceholder: 'div[data-entityid="container-top-stories#1"]'   // css selector to inject our content into
+    //     });
+    // });
+
+    // create simple route to test our fake news
+    app.get('/:url', function(req, res) {
+        console.log('called for specific URL: ', req.params.url)
+        var url =  decodeURIComponent(req.params.url)
+
+        // var urls = [
+        //     "https://www.xkcd.com/1",
+        //     "https://www.twitter.com/realDonaldTrump/status/528286220418564096?lang=en",
+        //     "https://www.reddit.com/r/popular/",
+        //     "https://www.snopes.com/fact-check/brenda-lee-removed-air-force-one/",
+        //     "https://www.downloadbreadcrumbs.com/#/tutorial1",
+        //     "https://www.tomsguide.com/us/amazon-data-breach,news-28610.html",
+        //     "https://www.twitter.com/PrisonPlanet/status/1060344443616800768"
+
+        // ]
+
+        // var id = req.params.id
         // respond to this request with our fake-new content embedded within the BBC News home page
+        console.log('triggered for id', url)
         res.merge('fake-news', {
-            sourceUrl: 'http://www.bbc.co.uk/news',                             // external url to fetch
+            sourceUrl: url,                             // external url to fetch
             sourcePlaceholder: 'div[data-entityid="container-top-stories#1"]'   // css selector to inject our content into
         });
-    });
+    });    
 
     // start the server
     app.listen(8080, function() {
