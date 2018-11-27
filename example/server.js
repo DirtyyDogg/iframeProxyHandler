@@ -62,7 +62,7 @@ function Server() {
         console.log('triggered for id', url)
         res.merge('fake-news', {
             sourceUrl: url,                             // external url to fetch
-            sourcePlaceholder: 'div[data-entityid="container-top-stories#1"]'   // css selector to inject our content into
+            sourcePlaceholder: 'Hi!'   // css selector to inject our content into
         });
     });    
 
